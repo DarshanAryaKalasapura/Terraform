@@ -1,0 +1,16 @@
+name: terraform gitops pipeline
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+      branches:
+        - main:
+        workflows:
+          - terraform-gitops-pipeline
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses:
